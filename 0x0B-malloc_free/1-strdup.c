@@ -16,12 +16,13 @@ char *_strdup(char *str)
 	unsigned int n;
 	char *copy;
 
+	i = 0;
 	n = 0;
 	while (str[n] != '\0')
 	{
 		n++;
 	}
-	copy = malloc((sizeof(char) * n));
+	copy = malloc((sizeof(char) * n + 1));
 	if (copy == NULL)
 		return (NULL);
 	while (str[i] != '\0')
@@ -29,5 +30,6 @@ char *_strdup(char *str)
 		copy[i] = str[i];
 		i++;
 	}
+	copy[i] = '\0';
 	return (copy);
 }
